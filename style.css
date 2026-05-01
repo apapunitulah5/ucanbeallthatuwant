@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: #172033;
+  background: url(img/blue-stars.gif) center center / cover no-repeat fixed;
+  /* background:
+    linear-gradient(rgba(8, 26, 55, 0.55), rgba(8, 26, 55, 0.78)),
+    linear-gradient(135deg, #16345f, #7899bd, #dce9f4);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(8, 26, 55, 0.45),
+    rgba(8, 26, 55, 0.68)
+  );
+  z-index: -1;
+}
+
+.page-one,
+.page-three {
+  font-family: "VT323", monospace;
+}
+
+.page-two {
+  font-family: "Andika", sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-page {
+  align-items: flex-start;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.card {
+  width: min(90%, 720px);
+  padding: 38px;
+  border-radius: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.8)),
+    url("img/pattern.jpeg");
+
+  background-size: cover;
+  background-position: center;
+  border: 1.5px solid rgba(80, 120, 160, 0.35);
+  box-shadow:
+    0 25px 65px rgba(6, 20, 43, 0.4),
+    inset 0 0 35px rgba(255, 255, 255, 0.55);
+
+  animation: fadeUp 0.9s ease;
+}
+
+.small-card {
+  max-width: 520px;
+}
+
+.card h1 {
+  font-family: "VT323", monospace;
+  font-size: 28px;
+  color: #18243a;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+  color: #18243a;
+  margin-bottom: 24px;
+}
+
+.soft-text {
+  width: 100%;
+  padding: 12px 18px;
+  margin: 28px auto 18px;
+  border-radius: 18px;
+  font-size: 25px;
+  color: #33445f;
+  background: rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(120, 150, 180, 0.18);
+}
+
+.letter-card {
+  text-align: justify;
+  line-height: 1.85;
+}
+
+.letter-card h1 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.letter-card p {
+  font-size: 15px;
+  margin-bottom: 28px;
+  color: #223047;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.45);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 34px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  background: rgba(93, 130, 174, 0.75);
+  font-family: "VT323", monospace;
+  font-size: 28px;
+  border: 1px solid rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 10px 25px rgba(53, 84, 125, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: rgba(74, 112, 158, 0.9);
+}
+
+.bottom-btn {
+  display: block;
+  width: fit-content;
+  margin: 42px auto 0;
+}
+
+/* image page 1: tidak dikecilkan paksa */
+.intro-img {
+  display: block;
+  margin: 22px auto 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+/* gif page 2: sejajar, tapi ukuran asli tetap dihormati */
+.apology-gifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  margin-bottom: 28px;
+}
+
+.apology-gif {
+  display: block;
+  max-width: 48%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* image/gif page 3 */
+.cute-img {
+  width: min(82%, 310px);
+  border-radius: 24px;
+  margin: 14px auto 32px;
+  display: block;
+  object-fit: cover;
+  /* border: 1.5px solid rgba(80, 120, 160, 0.25); */
+  /* box-shadow: 0 15px 32px rgba(22, 45, 75, 0.22); */
+}
+
+.cute-img:hover,
+.intro-img:hover,
+.apology-gif:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease;
+}
+
+.tiny-note {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(24, 36, 58, 0.65);
+  margin-top: -8px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.yes-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 18px;
+  margin-top: 20px;
+}
+
+.yes-btn {
+  border: none;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: "VT323", monospace;
+  font-size: 29px;
+  color: #172033;
+  background: rgba(255, 255, 255, 0.35);
+  transition: 0.25s ease;
+}
+
+.yes-btn:nth-child(3n) {
+  font-size: 34px;
+}
+
+.yes-btn:nth-child(4n) {
+  transform: rotate(-4deg);
+}
+
+.yes-btn:nth-child(5n) {
+  transform: rotate(4deg);
+}
+
+.yes-btn:hover {
+  transform: scale(1.15);
+  background: rgba(191, 219, 254, 0.75);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  .page {
+    padding: 22px;
+  }
+
+  .scroll-page {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 32px 26px;
+    border-radius: 26px;
+  }
+
+  .card h1 {
+    font-size: 40px;
+  }
+
+  .card h2 {
+    font-size: 38px;
+  }
+
+  .soft-text {
+    font-size: 24px;
+  }
+
+  .letter-card p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .apology-gifs {
+    gap: 12px;
+  }
+
+  .apology-gif {
+    max-width: 48%;
+  }
+
+  .cute-img {
+    width: min(88%, 300px);
+  }
+}
+
+/* hp */
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .page {
+    padding: 18px;
+  }
+
+  .scroll-page {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
+  .small-card {
+    max-width: 100%;
+  }
+
+  .card h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+  }
+
+  .soft-text {
+    font-size: 23px;
+    padding: 10px 14px;
+    margin: 22px auto 14px;
+  }
+
+  .letter-card {
+    text-align: left;
+    line-height: 1.75;
+  }
+
+  .letter-card h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+
+  .letter-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+    text-align: left;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    padding: 12px 20px;
+  }
+
+  .bottom-btn {
+    width: 100%;
+    margin-top: 34px;
+  }
+
+  .intro-img {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 16px;
+  }
+
+  .apology-gifs {
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .apology-gif {
+    max-width: 48%;
+    border-radius: 14px;
+  }
+
+  .cute-img {
+    width: 100%;
+    max-width: 290px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+  }
+
+  .tiny-note {
+    font-size: 16px;
+    margin-top: -4px;
+    margin-bottom: 18px;
+  }
+
+  .yes-area {
+    gap: 10px 12px;
+  }
+
+  .yes-btn {
+    font-size: 26px;
+    padding: 7px 14px;
+  }
+
+  .yes-btn:nth-child(3n) {
+    font-size: 30px;
+  }
+}
+
+/* hp kecil */
+@media (max-width: 360px) {
+  .card {
+    padding: 24px 16px;
+  }
+
+  .card h1 {
+    font-size: 34px;
+  }
+
+  .card h2 {
+    font-size: 30px;
+  }
+
+  .letter-card p {
+    font-size: 10px;
+  }
+
+  .soft-text {
+    font-size: 21px;
+  }
+
+  .apology-gifs {
+    gap: 6px;
+  }
+
+  .apology-gif {
+    max-width: 49%;
+  }
+
+  .yes-btn {
+    font-size: 24px;
+    padding: 6px 12px;
+  }
+}
